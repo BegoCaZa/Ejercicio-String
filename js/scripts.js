@@ -241,3 +241,24 @@ const idValidation=(numbers)=>{
  idValidation("1234567B")
  idValidation("12347A")
  idValidation("1234")
+
+ //EJERCICIO 20
+ //2️⃣0️⃣ Abby encontró una combinación de caja fuerte que parece ser un número de 4 dígitos. Quiere probar combinaciones aleatorias hasta encontrar una que termine en 7. Crea una función que genere un número de 4 dígitos que termine en 7.
+const codeGenerator=()=>{
+    const combination=console.log(Math.floor(Math.random()*1000)+1);
+
+    console.log(combination + "7");
+
+}
+
+codeGenerator() //Intente copiar el ejemplo de clase pero nop
+
+//EJERCICIO 21
+// Macarena está seleccionando un color al azar para una promoción. Los colores posibles son "Rojo", "Azul", "Verde" y "Amarillo". Crea una función que devuelva uno de estos colores de forma aleatoria.
+
+const colorForPromotion =(color)=>{
+    const rojo="rojo";
+     const azul="azul";
+     const verde="verde";
+     const amarillo="amarillo"
+}
