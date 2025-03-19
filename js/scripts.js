@@ -142,4 +142,16 @@ isThisCodeAPassword("2024")
 isThisCodeAPassword("202")
 isThisCodeAPassword("2026")
 
+//EJERCICIO 11
+//1️⃣1️⃣ Camila está revisando invitaciones para un evento. Si el nombre del invitado empieza con "A", "E", "I", "O" o "U", se le asignará una mesa especial. Si empieza con otra letra, se le asignará una mesa normal. Crea una función que reciba un nombre y determine su ubicación.
+const tableAssignmentForGifts = (name)=>{
+    const vocals="AEIOU"
+    if (vocals.includes(name.charAt(0).toUpperCase())){
+        console.log("Mesa Especial yupi");
+    }else {
+        console.log("Mesa Normal boooo")
+    }
+}
 
+tableAssignmentForGifts("Andrea")
+tableAssignmentForGifts("Renata")
