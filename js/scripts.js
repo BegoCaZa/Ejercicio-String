@@ -115,11 +115,13 @@ doesTheWordHasZ("Calleja")
 //9️⃣ Macarena está clasificando documentos según su urgencia. Si un mensaje contiene la palabra "urgente" en cualquier parte, lo priorizará. Si no, será un mensaje normal. Crea una función que reciba un mensaje y determine su nivel de prioridad.
 
 const isThisMessageUrgent = (message)=>{
-    if (message.includes("urgente")){
-        console.log("Mensaje con prioridad");
-    } else {
-        console.log("Mensaje normal")
-    }
+    message.includes("urgente") ? console.log("Mensaje con prioridad") : console.log("Mensaje normal")
+    
+    // if (message.includes("urgente")){
+    //     console.log("Mensaje con prioridad");
+    // } else {
+    //     console.log("Mensaje normal")
+    // }
 }
 
 isThisMessageUrgent("Esto es urgente")
@@ -131,11 +133,13 @@ isThisMessageUrgent("Esto no lo es")
 
 const isThisCodeAPassword = (number)=>{
     const numberToString= number.toString(); //Recorde con el meme que dijiste que existia una forma de pasar un numero a "characters" y lo googolee
-    if (numberToString.length===4 && (numberToString%2===0)){
-        console.log("Puede ser una combinación");
-    } else {
-        console.log("Este no es un código")
-    }
+
+    numberToString.length===4 && numberToString%2===0 ? console.log("Puede ser una combinación") : console.log("Este no es un código")
+    // if (numberToString.length===4 && (numberToString%2===0)){
+    //     console.log("Puede ser una combinación");
+    // } else {
+    //     console.log("Este no es un código")
+    // }
 }
 
 isThisCodeAPassword("2024")
@@ -145,13 +149,95 @@ isThisCodeAPassword("2026")
 //EJERCICIO 11
 //1️⃣1️⃣ Camila está revisando invitaciones para un evento. Si el nombre del invitado empieza con "A", "E", "I", "O" o "U", se le asignará una mesa especial. Si empieza con otra letra, se le asignará una mesa normal. Crea una función que reciba un nombre y determine su ubicación.
 const tableAssignmentForGifts = (name)=>{
-    const vocals="AEIOU"
-    if (vocals.includes(name.charAt(0).toUpperCase())){
-        console.log("Mesa Especial yupi");
-    }else {
-        console.log("Mesa Normal boooo")
-    }
+    const vowels="AEIOU"
+
+    vowels.includes(name.charAt(0).toUpperCase()) ? console.log("Mesa Especial Yupi") : console.log("Mesa Normal Boo") //le pido que revise si en el primer caracter estan las vocales y si son mayusculas
+
+    // if (vocals.includes(name.charAt(0).toUpperCase())){
+    //     console.log("Mesa Especial yupi");
+    // }else {
+    //     console.log("Mesa Normal boooo")
+    // }
+
 }
 
 tableAssignmentForGifts("Andrea")
 tableAssignmentForGifts("Renata")
+
+//EJERCICIO 12
+//1️⃣2️⃣ Bego está verificando si un texto contiene lenguaje ofensivo. Si un mensaje contiene la palabra "tonto" o "feo", se marcará como inapropiado. Si no, será aceptado. Crea una función que reciba un mensaje y determine su categoría.
+
+const isTheMessageOffensive=(message)=>{
+    (message.includes("tonto") || message.includes("feo")) ? console.log("Inapropiado") : console.log("Apropiado")
+
+    // if(message.includes("tonto")|| message.includes("feo")){ //no puedo poner dos palabras dentro del metodo. 
+    //     console.log("Inapropiado");
+    // }else {
+    //     console.log("Apropiado")
+    // }
+}
+
+isTheMessageOffensive("tonto")
+isTheMessageOffensive("eres bonito")
+isTheMessageOffensive("eres tonto")
+
+//EJERCICIO 13
+//1️⃣3️⃣ Sabrina quiere imprimir etiquetas con iniciales. Crea una función que reciba un nombre y un apellido y devuelva sus iniciales en mayúsculas, separadas por un punto.
+const nameTags=(name,surename)=>{
+    const inicialName= name.charAt(0).toUpperCase(); //no hay comparativa, asi que solo debe obtener la letra, hacerla mayuscula e imprimirla
+    const inicialSurename= surename.charAt(0).toUpperCase();
+
+    console.log (inicialName+"." + inicialSurename);
+}
+
+nameTags("Bego","Calleja")
+
+//EJERCICIO 14
+//1️⃣4️⃣ Macarena está diseñando una campaña publicitaria. Si el título del anuncio tiene más de 20 caracteres, lo reducirá. Si tiene 20 o menos, lo usará tal cual. Crea una función que reciba un título y determine si debe ajustarse.
+ const isTheTitleAdjustable=(title)=>{
+    (title.length>=20) ? console.log("Debe ajustarse") : console.log ("Se imprime igual")
+ }
+
+ isTheTitleAdjustable("zoquete")
+ isTheTitleAdjustable("Popocatepetle es un volcán en Puebla")
+
+ //EJERCICIO 15
+ //1️⃣5️⃣ Abby encontró una radio funcionando con interferencias. Si la señal incluye la palabra "ayuda" o "suministros", significa que alguien está pidiendo asistencia. Si no contiene estas palabras, lo ignorará. Crea una función que reciba un mensaje de radio y determine si Abby debe responder.
+const isThisAHelpMessage=(message)=>{
+    (message.includes("ayuda") || message.includes("suministros")) ? console.log("JODER, NECESITAN AYUDA!") : console.log("Todo cool, todo chill")
+}
+
+isThisAHelpMessage("ayuda")
+isThisAHelpMessage("suministros")
+isThisAHelpMessage("holis")
+
+//EJERCICIO 16
+//1️⃣6️⃣ Camila quiere asegurarse de que los nombres de usuario no contengan espacios. Si un nombre tiene espacios, será inválido. Si no tiene, será aceptado. Crea una función que reciba un nombre de usuario y determine su validez.
+
+const userNameValidation=(userName)=>{
+    (userName.includes(" ")) ? console.log("Usuario inválido") : console.log("Usuario válido")
+}
+
+userNameValidation("nombre")
+userNameValidation("tu nombre")
+
+//EJERCICIO 17
+//1️⃣7️⃣ Bego está registrando nuevas cuentas de clientes. Si un correo electrónico contiene "@" y ".", será válido. Si no tiene alguno de estos elementos, será inválido. Crea una función que reciba un email y determine si es correcto.
+const accountRegistration=(email)=>{
+    email.includes("@") && email.includes(".") ? console.log("Email correcto") : console.log("Email incorrecto")
+}
+
+accountRegistration("bego@.")
+accountRegistration("bego.")
+accountRegistration("bego@")
+accountRegistration("bego")
+
+//EJERCICIO 19
+//Macarena está validando números de identificación. Si un número tiene exactamente 8 caracteres y termina en una letra, será válido. Si no cumple estas condiciones, será inválido. Crea una función que reciba un número de identificación y determine si es correcto.
+const idValidation=(numbers)=>{
+    const lastLetter="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    lastLetter.includes(numbers.charAt(8)) && numbers.length===8 ? console.log("Contraseña válida") : console.log("Contraseña inválida")
+}
+ idValidation("1234567B")
+ idValidation("12347A")
+ idValidation("1234")
