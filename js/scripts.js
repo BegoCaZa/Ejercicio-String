@@ -83,16 +83,26 @@ isThisNumberCorrect("1234567")
 //7️⃣ Bego está eligiendo un dominio para su nueva web. Si la web termina en ".com", se usará para negocios. Si termina en ".org", será para una organización. Si no es ninguno de estos, el dominio no es válido. Crea una función que reciba un dominio y determine su clasificación.
 const verifyEmailAdressUse = (email)=>{
     //tiene que tener @ para se email
-    if  (email.includes===("@")){
-    }else{ console.log("El dominio no es válido")
-    } if (email.endsWith(".org")){
+    if  (email.includes("@")){
+        if (email.endsWith(".org")){
         console.log("Email para una organización");
     } else if (email.endsWith(".com")){
         console.log("Email para una negocio");
-    }
+        
+    }}else{ console.log("El dominio no es válido")}
 }
 
-verifyEmailAdressUse("begoxc@hotmail.com")
-verifyEmailAdressUse("begoxc@hotmail.org")
+ 
+verifyEmailAdressUse("begoxch@otmail.org")
+verifyEmailAdressUse("begoxcho@tmail.org")
 verifyEmailAdressUse("begoxchotmail.com")
-verifyEmailAdressUse("begoxchotmail")
+///DUDA -- como hago para que después de que detecte que no es @, termine la evaluacion
+
+//EJERCICIO 8 
+//8️⃣ Sabrina está revisando una lista de palabras. Si una palabra contiene la letra "z", la marcará como especial. Si no, será una palabra común. Crea una función que reciba una palabra y determine su categoría.
+const doesTheWordHasZ = (word)=>{
+    word.includes("z") || word.includes("Z")  ? console.log("Es una palabra especial") : console.log("Es una palagra común")
+}
+doesTheWordHasZ("zardain")
+doesTheWordHasZ("Zardain")
+doesTheWordHasZ("Calleja")
