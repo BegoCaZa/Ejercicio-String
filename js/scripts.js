@@ -28,9 +28,71 @@ verifyIfEmailEndsInDot("corre")
 //3️⃣ Sabrina está verificando contraseñas. Si la contraseña tiene más de 8 caracteres y empieza con un número, será válida. Si no cumple estas condiciones, será inválida. Crea una función que reciba una contraseña y determine si es segura.
  const verifyIfPasswordIsSave=(password)=>{
     const numbers ='0123456789'
-    if (password.length>=8 && numbers.includes(password.charArt(0))){
-        console.log("Contraseña válida")
-    }else console.log("Contraseña Invalida")
+    // if (password.length>=8 && numbers.includes(password.charAt(0))){
+    //     console.log("Contraseña válida")
+    // }else console.log("Contraseña Invalida")
+    password.length>=8 && numbers.includes(password.charAt(0)) ? console.log("Contraseña válida") : console.log("Contraseña Invalida")
+
  }
  verifyIfPasswordIsSave("9contraseña")
  verifyIfPasswordIsSave("coea")
+
+ //EJERCICIO 4
+ //4️⃣ Macarena está revisando la gramática de un texto. Si la primera letra de la frase está en mayúscula y la frase termina con un punto, es correcta. Si no, está mal escrita. Crea una función que reciba una frase y determine si cumple ambas reglas.
+
+ const verifyIfTextIsWellWritten =(sentence)=>{
+    const firstLetter=sentence.charAt(0)
+    // if (sentence.endsWith(".") && sentence.includes(firstLetter.toUpperCase())){
+    //     console.log('La frase es correcta')
+    // } else console.log ('La frase es incorrecta')
+    sentence.endsWith(".") && sentence.includes(firstLetter.toUpperCase()) ? console.log("La frase es correcta") : console.log("La frase es incorreca")
+ }
+
+ verifyIfTextIsWellWritten("Sombrero.")
+ verifyIfTextIsWellWritten("sombrero")
+
+//EJERCICIO 5
+//5️⃣ Abby encontró un mensaje pintado en la pared con dos palabras. Si ambas palabras tienen la misma cantidad de letras, lo tomará como una pista. Si no, lo ignorará. Crea una función que reciba dos palabras y determine si el mensaje es importante.
+
+const isThisMessageImportant = (wordA,wordB)=>{
+    // if (wordA.length===wordB.length){
+    //     console.log("Esto es una pista")
+    // }else console.log ("Ignora este mensaje")
+
+    wordA.length===wordB.length ? console.log ("Esto es una pista") : console.log("Ignora este mensaje")
+}
+
+isThisMessageImportant("sopa","copa")
+isThisMessageImportant("soa","copa")
+
+
+
+//EJERCICIO 6
+//6️⃣ Camila quiere asegurarse de que un número de teléfono tiene el formato correcto. Debe tener exactamente 9 caracteres. Crea una función que reciba un número como string y determine si es válido o no.
+const isThisNumberCorrect = (number)=>{
+    // if(number.length===(9)){
+    //     console.log("El número es válido")
+    // } else console.log("El número es inválido")
+    number.length===9 ? console.log("El número es válido") : console.log ("El número es inválido")
+}
+
+isThisNumberCorrect("123456789")
+isThisNumberCorrect("1234567")
+
+//EJERCICIO 7
+//7️⃣ Bego está eligiendo un dominio para su nueva web. Si la web termina en ".com", se usará para negocios. Si termina en ".org", será para una organización. Si no es ninguno de estos, el dominio no es válido. Crea una función que reciba un dominio y determine su clasificación.
+const verifyEmailAdressUse = (email)=>{
+    //tiene que tener @ para se email
+    if  (email.includes===("@")){
+    }else{ console.log("El dominio no es válido")
+    } if (email.endsWith(".org")){
+        console.log("Email para una organización");
+    } else if (email.endsWith(".com")){
+        console.log("Email para una negocio");
+    }
+}
+
+verifyEmailAdressUse("begoxc@hotmail.com")
+verifyEmailAdressUse("begoxc@hotmail.org")
+verifyEmailAdressUse("begoxchotmail.com")
+verifyEmailAdressUse("begoxchotmail")
