@@ -45,11 +45,15 @@ verifyIfEmailEndsInDot("corre")
     // if (sentence.endsWith(".") && sentence.includes(firstLetter.toUpperCase())){
     //     console.log('La frase es correcta')
     // } else console.log ('La frase es incorrecta')
-    sentence.endsWith(".") && sentence.includes(firstLetter.toUpperCase()) ? console.log("La frase es correcta") : console.log("La frase es incorreca")
+    sentence.endsWith(".") && sentence.includes(firstLetter.toUpperCase(0)) ? console.log("La frase es correcta") : console.log("La frase es incorrecta")
  }
 
  verifyIfTextIsWellWritten("Sombrero.")
- verifyIfTextIsWellWritten("sombrero")
+ verifyIfTextIsWellWritten("sOmbrero.")
+ verifyIfTextIsWellWritten("Sombrero.")
+ verifyIfTextIsWellWritten("Sombrero")
+
+ // DUDA! SI FUNCIONA
 
 //EJERCICIO 5
 //5️⃣ Abby encontró un mensaje pintado en la pared con dos palabras. Si ambas palabras tienen la misma cantidad de letras, lo tomará como una pista. Si no, lo ignorará. Crea una función que reciba dos palabras y determine si el mensaje es importante.
@@ -101,8 +105,41 @@ verifyEmailAdressUse("begoxchotmail.com")
 //EJERCICIO 8 
 //8️⃣ Sabrina está revisando una lista de palabras. Si una palabra contiene la letra "z", la marcará como especial. Si no, será una palabra común. Crea una función que reciba una palabra y determine su categoría.
 const doesTheWordHasZ = (word)=>{
-    word.includes("z") || word.includes("Z")  ? console.log("Es una palabra especial") : console.log("Es una palagra común")
+    word.includes("z") || word.includes("Z")  ? console.log("Es una palabra especial") : console.log("Es una palabra común")
 }
 doesTheWordHasZ("zardain")
 doesTheWordHasZ("Zardain")
 doesTheWordHasZ("Calleja")
+
+//EJERCICIO 9
+//9️⃣ Macarena está clasificando documentos según su urgencia. Si un mensaje contiene la palabra "urgente" en cualquier parte, lo priorizará. Si no, será un mensaje normal. Crea una función que reciba un mensaje y determine su nivel de prioridad.
+
+const isThisMessageUrgent = (message)=>{
+    if (message.includes("urgente")){
+        console.log("Mensaje con prioridad");
+    } else {
+        console.log("Mensaje normal")
+    }
+}
+
+isThisMessageUrgent("Esto es urgente")
+isThisMessageUrgent("Esto no lo es")
+
+//EJERCICIO 10
+//🔟 Abby encontró una nota con un código en una casa abandonada. Si el código es un número par y tiene exactamente 4 dígitos, puede ser la combinación de una caja fuerte. Si es impar o tiene otra longitud, lo descartará. Crea una función que reciba un código y determine si Abby debe investigarlo.
+
+
+const isThisCodeAPassword = (number)=>{
+    const numberToString= number.toString(); //Recorde con el meme que dijiste que existia una forma de pasar un numero a "characters" y lo googolee
+    if (numberToString.length===4 && (numberToString%2===0)){
+        console.log("Puede ser una combinación");
+    } else {
+        console.log("Este no es un código")
+    }
+}
+
+isThisCodeAPassword("2024")
+isThisCodeAPassword("202")
+isThisCodeAPassword("2026")
+
+
