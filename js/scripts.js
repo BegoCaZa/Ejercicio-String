@@ -45,7 +45,9 @@ verifyIfEmailEndsInDot("corre")
     // if (sentence.endsWith(".") && sentence.includes(firstLetter.toUpperCase())){
     //     console.log('La frase es correcta')
     // } else console.log ('La frase es incorrecta')
-    sentence.endsWith(".") && sentence.includes(firstLetter.toUpperCase()) ? console.log("La frase es correcta") : console.log("La frase es incorrecta")
+    // sentence.endsWith(".") && sentence.includes(firstLetter.toUpperCase()) ? console.log("La frase es correcta") : console.log("La frase es incorrecta")
+
+    sentence.includes(firstLetter.toUpperCase()) ? console.log("La frase es correcta") : console.log("La frase es incorrecta")
  }
 
  verifyIfTextIsWellWritten("sombreroS.")
@@ -107,7 +109,7 @@ verifyEmailAdressUse("begoxchotmail.com")
 const doesTheWordHasZ = (word)=>{
     // version larga --word.includes("z") || word.includes("Z")  ? console.log("Es una palabra especial") : console.log("Es una palabra común")
 
-    word.includes("z") || word.includes("Z")  ? console.log("Es una palabra especial") : console.log("Es una palabra común")
+    word.toLowerCase().includes("z") ? console.log("Es una palabra especial") : console.log("Es una palabra común")
 }
 
 
@@ -272,3 +274,77 @@ const colorForPromotion =()=>{
     }
 }
 colorForPromotion()
+
+//EJERCICIO 22 
+// 2️⃣2️⃣ Sabrina quiere generar una combinación de letras para un código de producto. La combinación debe tener 3 letras aleatorias en mayúsculas. Crea una función que genere y muestre esta combinación.
+
+const lettersPassword=()=>{
+    const letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const number1=Math.floor(Math.random()*27);
+    const number2=Math.floor(Math.random()*27);
+    const number3=Math.floor(Math.random()*27);
+    
+    console.log(letters.charAt(number1)+ letters.charAt(number2)+letters.charAt(number3));
+
+}
+lettersPassword()
+
+//EJERCICIO 23
+//2️⃣3️⃣ Bego está revisando una lista de verbos para una clase de gramática. Necesita clasificar cada verbo según su conjugación. Crea una función que reciba dos verbos en infinitivo y determine si pertenecen a la primera ("-ar"), segunda ("-er") o tercera ("-ir") conjugación. La función deberá imprimir la clasificación de cada verbo.
+
+const verbSorting=(verb1,verb2)=>{
+    const defineConjugation=(verb)=>{ //para agrupar ambas conjugaciones y no hacerlo doble
+        if (verb.endsWith("ar")){
+            console.log("Primer conjugación");
+        } else if (verb.endsWith("er")){
+            console.log("Segunda clasificacion");
+        } else if (verb.endsWith("ir")){
+            console.log("Tercer clasificación");
+        }
+    }
+    defineConjugation(verb1);
+    defineConjugation(verb2); //les da valor a cada verbo
+
+}
+verbSorting("cantar","llorar")
+verbSorting("tener","morir")
+
+//EJERCICIO 24
+//2️⃣4️⃣ Abby encontró una caja cerrada con un código de 5 números. Solo uno de cada 5 intentos abrirá la caja. Crea una función que simule 5 intentos y muestre si en alguno se abre la caja o no.
+
+const tryToOpenTheBox=()=>{
+    const correctCode=Math.floor(Math.random()*6);
+
+    if (correctCode===1){
+        console.log("CORRECTO");
+    } else {
+        console.log("INCORRECTO");
+    }
+
+    if (correctCode===2){
+        console.log("CORRECTO");
+    } else {
+        console.log("INCORRECTO");
+    }
+
+    if (correctCode===3){
+        console.log("CORRECTO");
+    } else {
+        console.log("INCORRECTO");
+    }
+
+    if (correctCode===4){
+        console.log("CORRECTO");
+    } else {
+        console.log("INCORRECTO");
+    }
+
+    if (correctCode===5){
+        console.log("CORRECTO");
+    } else {
+        console.log("INCORRECTO");
+    }
+
+}
+
+tryToOpenTheBox();
