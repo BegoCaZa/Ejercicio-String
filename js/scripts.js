@@ -31,7 +31,7 @@ verifyIfEmailEndsInDot("corre")
     // if (password.length>=8 && numbers.includes(password.charAt(0))){
     //     console.log("Contraseña válida")
     // }else console.log("Contraseña Invalida")
-    password.length>=8 && numbers.includes(password.charAt(0)) ? console.log("Contraseña válida") : console.log("Contraseña Invalida")
+    password.length>8 && numbers.includes(password.charAt(0)) ? console.log("Contraseña válida") : console.log("Contraseña Invalida")
 
  }
  verifyIfPasswordIsSave("9contraseña")
@@ -45,10 +45,10 @@ verifyIfEmailEndsInDot("corre")
     // if (sentence.endsWith(".") && sentence.includes(firstLetter.toUpperCase())){
     //     console.log('La frase es correcta')
     // } else console.log ('La frase es incorrecta')
-    sentence.endsWith(".") && sentence.includes(firstLetter.toUpperCase(0)) ? console.log("La frase es correcta") : console.log("La frase es incorrecta")
+    sentence.endsWith(".") && sentence.includes(firstLetter.toUpperCase()) ? console.log("La frase es correcta") : console.log("La frase es incorrecta")
  }
 
- verifyIfTextIsWellWritten("Sombrero.")
+ verifyIfTextIsWellWritten("sombreroS.")
  verifyIfTextIsWellWritten("sOmbrero.")
  verifyIfTextIsWellWritten("Sombrero.")
  verifyIfTextIsWellWritten("Sombrero")
@@ -97,7 +97,7 @@ const verifyEmailAdressUse = (email)=>{
 }
 
  
-verifyEmailAdressUse("begoxch@otmail.org")
+verifyEmailAdressUse("begoxchotmail.org")
 verifyEmailAdressUse("begoxcho@tmail.org")
 verifyEmailAdressUse("begoxchotmail.com")
 ///DUDA -- como hago para que después de que detecte que no es @, termine la evaluacion
@@ -105,8 +105,12 @@ verifyEmailAdressUse("begoxchotmail.com")
 //EJERCICIO 8 
 //8️⃣ Sabrina está revisando una lista de palabras. Si una palabra contiene la letra "z", la marcará como especial. Si no, será una palabra común. Crea una función que reciba una palabra y determine su categoría.
 const doesTheWordHasZ = (word)=>{
+    // version larga --word.includes("z") || word.includes("Z")  ? console.log("Es una palabra especial") : console.log("Es una palabra común")
+
     word.includes("z") || word.includes("Z")  ? console.log("Es una palabra especial") : console.log("Es una palabra común")
 }
+
+
 doesTheWordHasZ("zardain")
 doesTheWordHasZ("Zardain")
 doesTheWordHasZ("Calleja")
@@ -236,29 +240,35 @@ accountRegistration("bego")
 //Macarena está validando números de identificación. Si un número tiene exactamente 8 caracteres y termina en una letra, será válido. Si no cumple estas condiciones, será inválido. Crea una función que reciba un número de identificación y determine si es correcto.
 const idValidation=(numbers)=>{
     const lastLetter="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    lastLetter.includes(numbers.charAt(8)) && numbers.length===8 ? console.log("Contraseña válida") : console.log("Contraseña inválida")
+    lastLetter.includes(numbers.charAt(8).toLowerCase()) && numbers.length===8 ? console.log("Contraseña válida") : console.log("Contraseña inválida")
 }
- idValidation("1234567B")
+ idValidation("1234567b")
  idValidation("12347A")
  idValidation("1234")
 
  //EJERCICIO 20
  //2️⃣0️⃣ Abby encontró una combinación de caja fuerte que parece ser un número de 4 dígitos. Quiere probar combinaciones aleatorias hasta encontrar una que termine en 7. Crea una función que genere un número de 4 dígitos que termine en 7.
 const codeGenerator=()=>{
-    const combination=console.log(Math.floor(Math.random()*1000)+1);
+    const combination=Math.floor(Math.random()*(999-100)+100); //que evalue del 999 para que si tenga 3 digitos
 
     console.log(combination + "7");
 
 }
-
 codeGenerator() //Intente copiar el ejemplo de clase pero nop
 
 //EJERCICIO 21
 // Macarena está seleccionando un color al azar para una promoción. Los colores posibles son "Rojo", "Azul", "Verde" y "Amarillo". Crea una función que devuelva uno de estos colores de forma aleatoria.
 
-const colorForPromotion =(color)=>{
-    const rojo="rojo";
-     const azul="azul";
-     const verde="verde";
-     const amarillo="amarillo"
+const colorForPromotion =()=>{
+    const aleatoryNumber=Math.floor(Math.random()*4); //como son 4 colores, necesito que busque del 0-4
+    if (aleatoryNumber ===0){
+        console.log("Azul");
+    } else if (aleatoryNumber=== 1) {
+        console.log("Rojo");
+    } else if (aleatoryNumber===2){
+        console.log("Verde");
+    } else {
+        console.log("Amarillo");
+    }
 }
+colorForPromotion()
