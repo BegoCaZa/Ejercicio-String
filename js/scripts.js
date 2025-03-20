@@ -344,7 +344,109 @@ const tryToOpenTheBox=()=>{
     } else {
         console.log("INCORRECTO");
     }
-
 }
 
 tryToOpenTheBox();
+
+//EJERCICIO 25
+//2️⃣5️⃣ Camila quiere generar una clave secreta para una nueva cuenta. La clave debe tener un número aleatorio entre 100 y 999 y una letra aleatoria entre "A" y "Z". Crea una función que genere una clave con ese formato.
+
+const generateNewPassword=()=>{
+    const letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const randomLetter=Math.floor(Math.random()*27);
+    const randomNumber=Math.floor(Math.random()* (999-100)+100)
+
+    console.log(randomNumber+ letters.charAt(randomLetter))
+}
+
+generateNewPassword();
+
+//EJERCICIO 26
+//2️⃣6️⃣ Macarena quiere jugar al Euromillones, pero como nunca le toca, ha decidido confiar en el destino. Quiere generar 5 números aleatorios entre 1 y 50, asegurándose de que si un número es menor que 10, aparezca con un "0" delante. Por ejemplo, un posible resultado sería: "08 10 33 35 49". Crea una función que genere y muestre esta combinación de números en el formato correcto.
+
+const lotteryNumberGenerator=()=>{
+    const number1=Math.floor(Math.random()* (50-1)+1);
+    const number2=Math.floor(Math.random()* (50-1)+1);
+    const number3=Math.floor(Math.random()* (50-1)+1);
+    const number4=Math.floor(Math.random()* (50-1)+1);
+    const number5=Math.floor(Math.random()* (50-1)+1);
+    
+    if (number1<10) {
+        console.log(`0${number1} ${number2} ${number3} ${number4} ${number5}`);
+    }
+    if (number2<10){ 
+        console.log(`${number1} 0${number2} ${number3} ${number4} ${number5}`);
+    }
+    if (number3<10){
+        console.log(`${number1} ${number2} 0${number3} ${number4} ${number5}`);
+    }
+    if (number4<10){
+        console.log(`${number1} ${number2} ${number3} 0${number4} ${number5}`);
+    }
+    if (number5<10){
+        console.log(`${number1} ${number2} ${number3} ${number4} 0${number5}`);
+    }
+
+}
+
+lotteryNumberGenerator();
+
+//EJERCICIO 27
+//2️⃣7️⃣ Sabrina necesita ocultar parte de un número de tarjeta de crédito. Dado un número de 16 dígitos como string, la función debe reemplazar todos los caracteres excepto los últimos 4 con asteriscos. Por ejemplo, "1234567812345678" debe mostrarse como **********5678.
+
+const hideCardNumbers=(number)=>{
+    const last4Numbers = number.slice(-4); //sacar los ultimos 4 digitos
+    const asterisk = ("************");
+
+    console.log(asterisk.substring(0,number.length-4)+ last4Numbers)
+}
+
+hideCardNumbers("123456781230000")
+
+//2️⃣8️⃣ Camila quiere dividir frases largas en dos partes. Si una frase tiene más de 20 caracteres, debe dividirla en dos partes: los primeros 10 caracteres y el resto, separados por " - ". Si la frase tiene 20 o menos, se devuelve tal cual. Crea una función que realice esta división.
+
+const sentenceDivision=(sentance)=>{
+    if (sentance.lenght>20){ //detecta si es muy larga
+        const part1=sentence.substring(0,10); //hace la primer parte
+        const part2=sentence.substring(10); //hace la segunda parte
+        
+        console.log(part1 + "-" + part2); //imprime estas dos juntas
+    } else{
+        console.log(sentance);
+    }
+}
+
+sentenceDivision("Quién es la alumna favorita de Adrian?");
+sentenceDivision("Es Bego");
+
+//EJERCICIO 29
+//2️⃣9️⃣ Sabrina está encriptando mensajes secretos. Sabe que todos los mensajes deben tener 4 letras y quiere que cada letra de una palabra se sustituya por la siguiente en el abecedario (por ejemplo, "hola" se convertiría en "ipmb"). Si la letra es "z" o "Z", debe convertirse en "a" o "A" respectivamente. Crea una función que realice esta transformación en una palabra.
+
+const messageTranscription=(message)=>{
+    const character1 = mensaje.charAt(0); //saco cada una de las 4 letras
+    const character2 = mensaje.charAt(1);
+    const character3 = mensaje.charAt(2);
+    const character4 = mensaje.charAt(3);
+} //ni perra idea de como seguir :(
+
+//EJERCICO 30
+//3️⃣0️⃣ Bego necesita verificar si dos palabras de 4 letras son palíndromos (es decir, si lee igual de derecha a izquierda y de izquierda a derecha, como "amor" y "roma"). Crea una función que determine si dos palabras son palíndromos.
+
+const areThisWordsPalindromes=(word1,word2)=>{
+    // const word1Palindrome= word1.charAt(0)===word1.charAt(3) && word1.charAt(1) === word1.charAt(2); //esto las hace palindromos
+    // const word2Palindrome= word2.charAt(0)===word2.charAt(3) && word2.charAt(1) === word2.charAt(2);
+
+    // if (word1Palindrome && word2Palindrome){ //si estas dos sucedes
+    //     console.log("Son palíndromos");
+    // } else {
+    //     console.log("Alguna palabra no es palíndromo");
+    // }
+    if (word1.charAt(0)===word2.charAt(3) && (word1.charAt(3)===word2.charAt(0))){
+        console.log("Son palíndromos")
+    } else {
+        console.log("No son palíndormos")
+    }
+}
+areThisWordsPalindromes("amor","roma")
+areThisWordsPalindromes("lote","etol")
+areThisWordsPalindromes("amot","roma")
