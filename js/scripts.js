@@ -312,39 +312,54 @@ verbSorting("tener","morir")
 //EJERCICIO 24
 //2️⃣4️⃣ Abby encontró una caja cerrada con un código de 5 números. Solo uno de cada 5 intentos abrirá la caja. Crea una función que simule 5 intentos y muestre si en alguno se abre la caja o no.
 
-const tryToOpenTheBox=()=>{
-    const correctCode=Math.floor(Math.random()*6);
+// const tryToOpenTheBox=()=>{
+//     const correctCode=Math.floor(Math.random()*6);
 
-    if (correctCode===1){
-        console.log("CORRECTO");
-    } else {
-        console.log("INCORRECTO");
-    }
+//     if (correctCode===1){
+//         console.log("CORRECTO");
+//     } else {
+//         console.log("INCORRECTO");
+//     }
 
-    if (correctCode===2){
-        console.log("CORRECTO");
-    } else {
-        console.log("INCORRECTO");
-    }
+//     if (correctCode===2){
+//         console.log("CORRECTO");
+//     } else {
+//         console.log("INCORRECTO");
+//     }
 
-    if (correctCode===3){
-        console.log("CORRECTO");
-    } else {
-        console.log("INCORRECTO");
-    }
+//     if (correctCode===3){
+//         console.log("CORRECTO");
+//     } else {
+//         console.log("INCORRECTO");
+//     }
 
-    if (correctCode===4){
-        console.log("CORRECTO");
-    } else {
-        console.log("INCORRECTO");
-    }
+//     if (correctCode===4){
+//         console.log("CORRECTO");
+//     } else {
+//         console.log("INCORRECTO");
+//     }
 
-    if (correctCode===5){
+//     if (correctCode===5){
+//         console.log("CORRECTO");
+//     } else {
+//         console.log("INCORRECTO");
+//     }
+// }
+
+const tryToOpenTheBox =()=>{
+    const try1 = Math.random()< 0.2; // evalua la probabilidad 1/5 (probabilidad 20%)
+    const try2 = Math.random()< 0.2; // evalua la probabilidad 1/5 (probabilidad 20%)
+    const try3 = Math.random()< 0.2; // evalua la probabilidad 1/5 (probabilidad 20%)
+    const try4 = Math.random()< 0.2; // evalua la probabilidad 1/5 (probabilidad 20%)
+    const try5 = Math.random()< 0.2; // evalua la probabilidad 1/5 (probabilidad 20%)
+
+    if(try1 || try2 || try3 || try4 || try5){
         console.log("CORRECTO");
     } else {
         console.log("INCORRECTO");
     }
 }
+
 
 tryToOpenTheBox();
 
@@ -365,27 +380,35 @@ generateNewPassword();
 //2️⃣6️⃣ Macarena quiere jugar al Euromillones, pero como nunca le toca, ha decidido confiar en el destino. Quiere generar 5 números aleatorios entre 1 y 50, asegurándose de que si un número es menor que 10, aparezca con un "0" delante. Por ejemplo, un posible resultado sería: "08 10 33 35 49". Crea una función que genere y muestre esta combinación de números en el formato correcto.
 
 const lotteryNumberGenerator=()=>{
-    const number1=Math.floor(Math.random()* (50-1)+1);
-    const number2=Math.floor(Math.random()* (50-1)+1);
-    const number3=Math.floor(Math.random()* (50-1)+1);
-    const number4=Math.floor(Math.random()* (50-1)+1);
-    const number5=Math.floor(Math.random()* (50-1)+1);
+    const aleatoryNumber1=Math.floor(Math.random()* (50-1)+1);
+    const aleatoryNumber2=Math.floor(Math.random()* (50-1)+1);
+    const aleatoryNumber3=Math.floor(Math.random()* (50-1)+1);
+    const aleatoryNumber4=Math.floor(Math.random()* (50-1)+1);
+    const aleatoryNumber5=Math.floor(Math.random()* (50-1)+1);
     
-    if (number1<10) {
-        console.log(`0${number1} ${number2} ${number3} ${number4} ${number5}`);
-    }
-    if (number2<10){ 
-        console.log(`${number1} 0${number2} ${number3} ${number4} ${number5}`);
-    }
-    if (number3<10){
-        console.log(`${number1} ${number2} 0${number3} ${number4} ${number5}`);
-    }
-    if (number4<10){
-        console.log(`${number1} ${number2} ${number3} 0${number4} ${number5}`);
-    }
-    if (number5<10){
-        console.log(`${number1} ${number2} ${number3} ${number4} 0${number5}`);
-    }
+    const number1=aleatoryNumber1<10 ? ("0"+ aleatoryNumber1): aleatoryNumber1; //si el numero es menor a 10- agregale 0, si no, dejalo igual
+    const number2=aleatoryNumber2<10 ? ("0"+ aleatoryNumber2): aleatoryNumber2;
+    const number3=aleatoryNumber3<10 ? ("0"+ aleatoryNumber3): aleatoryNumber3;
+    const number4=aleatoryNumber4<10 ? ("0"+ aleatoryNumber4): aleatoryNumber4;
+    const number5=aleatoryNumber5<10 ? ("0"+ aleatoryNumber5): aleatoryNumber5;
+
+    console.log(number1,number2,number3,number3,number4,number5);
+    // if (number1<10) {
+    //     console.log(`0${number1} ${number2} ${number3} ${number4} ${number5}`);
+    // }
+    // if (number2<10){ 
+    //     console.log(`${number1} 0${number2} ${number3} ${number4} ${number5}`);
+    // }
+    // if (number3<10){
+    //     console.log(`${number1} ${number2} 0${number3} ${number4} ${number5}`);
+    // }
+    // if (number4<10){
+    //     console.log(`${number1} ${number2} ${number3} 0${number4} ${number5}`);
+    // }
+    // if (number5<10){
+    //     console.log(`${number1} ${number2} ${number3} ${number4} 0${number5}`);
+    // }
+
 
 }
 
@@ -423,12 +446,24 @@ sentenceDivision("Es Bego");
 //2️⃣9️⃣ Sabrina está encriptando mensajes secretos. Sabe que todos los mensajes deben tener 4 letras y quiere que cada letra de una palabra se sustituya por la siguiente en el abecedario (por ejemplo, "hola" se convertiría en "ipmb"). Si la letra es "z" o "Z", debe convertirse en "a" o "A" respectivamente. Crea una función que realice esta transformación en una palabra.
 
 const messageTranscription=(message)=>{
-    const character1 = mensaje.charAt(0); //saco cada una de las 4 letras
-    const character2 = mensaje.charAt(1);
-    const character3 = mensaje.charAt(2);
-    const character4 = mensaje.charAt(3);
-} //ni perra idea de como seguir :(
+    const letters ="abcdefghijklmnopqrstuvwxyz"
+    // const character1 = letters.charAt(Math.floor(Math.random()*letters.length)); //
+    const firstLetterPosition =  letters.indexOf(message.charAt(0)); //yo quiero saber la posicion del abecedario de la primer letra de la palabra
+    const firstLetter = firstLetterPosition=== letters.length -1 ? "a": letters.charAt(firstLetterPosition+1); //letters.length -1 es la ultima posicion del abecedario. Le estoy diciendo que si la primer letra, es la ultima del abecedar"z" se convierta a "a"
 
+    const secondLetterPosition =  letters.indexOf(message.charAt(1));
+    const secondLetter = secondLetterPosition=== letters.length -1 ? "a": letters.charAt(secondLetterPosition+1);
+
+    const thirdLetterPosition =  letters.indexOf(message.charAt(2));
+    const thirdLetter = thirdLetterPosition=== letters.length -1 ? "a": letters.charAt(thirdLetterPosition+1);
+
+    const forthLetterPosition =  letters.indexOf(message.charAt(3));
+    const forthLetter = forthLetterPosition=== letters.length -1 ? "a": letters.charAt(forthLetterPosition+1);
+   
+    console.log(`${firstLetter}${secondLetter}${thirdLetter}${forthLetter}`);
+} 
+
+messageTranscription("hola");
 //EJERCICO 30
 //3️⃣0️⃣ Bego necesita verificar si dos palabras de 4 letras son palíndromos (es decir, si lee igual de derecha a izquierda y de izquierda a derecha, como "amor" y "roma"). Crea una función que determine si dos palabras son palíndromos.
 
