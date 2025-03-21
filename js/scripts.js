@@ -462,8 +462,8 @@ const messageTranscription=(message)=>{
    
     console.log(`${firstLetter}${secondLetter}${thirdLetter}${forthLetter}`);
 } 
-
 messageTranscription("hola");
+
 //EJERCICO 30
 //3️⃣0️⃣ Bego necesita verificar si dos palabras de 4 letras son palíndromos (es decir, si lee igual de derecha a izquierda y de izquierda a derecha, como "amor" y "roma"). Crea una función que determine si dos palabras son palíndromos.
 
